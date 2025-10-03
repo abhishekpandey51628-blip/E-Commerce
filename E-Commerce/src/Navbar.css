@@ -1,0 +1,105 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #282c34;
+  color: white;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color: #ff9800;
+}
+
+
+.account-icons {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.account-icons:hover {
+  color: #ff9800;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal {
+  background: white;
+  padding: 30px 20px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #282c34;
+}
+
+
+.modal button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  width: 80%;
+  background: #282c34;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.modal button:hover {
+  background: #ff9800;
+}
+
+
+.close-btn {
+  background: red;
+  margin-top: 15px;
+  width: 50%;
+}
