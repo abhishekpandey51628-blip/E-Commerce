@@ -5,6 +5,7 @@ function Footer(){
     return(
         <footer className='footer'>
             <h2>Shoping karo khul ke paise lagao khul ke</h2>
+            <img src=''/>
           <div className='side1'>
             
                 <li><a href="https://google.com">Google</a> <FaGoogle/></li>

@@ -5,7 +5,11 @@ const session = require("express-session")
 const ProduceRoute = require("./routes/CommerceRoute/CommerceRoute.js")
 //
 const app = express();
-
+const cors = require("cors");
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials:true
+}))
 app.use(express.json())
 app.use(session({
     secret:"ngbsrboubsb",
@@ -27,4 +31,4 @@ function init(){
         app.listen(5000,()=>{console.log("server started")});
 }
 
-init()
+init();
