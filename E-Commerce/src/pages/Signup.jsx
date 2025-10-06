@@ -11,6 +11,7 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Signup button clicked");
     try {
       const res = await fetch("http://localhost:5000/signup", {
         method: "POST",
@@ -18,6 +19,7 @@ function Signup() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      console.log("Response:",data);
       setMessage(data.msg);
       if(data.success){
         navigate("/login");

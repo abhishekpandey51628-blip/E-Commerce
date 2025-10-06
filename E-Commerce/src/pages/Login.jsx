@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const navigate=useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
 
@@ -18,6 +19,10 @@ function Login() {
       });
       const data = await res.json();
       setMessage(data.msg);
+      if(data.success){
+      navigate('/Home');
+      }
+
     } catch (error) {
       console.error(error);
       setMessage("Error connecting to server");

@@ -4,14 +4,15 @@ import NavBar from './pages/NavBar';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
-import Home from './Home';
+import Home from './pages/Home';
+import Footer from './pages/Footer';
 
 function App() {
   return (
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/Home" element={<Home/>} />
         <Route path="/about" element={<h1>About Page</h1>} />
         <Route path="/services" element={<h1>Services Page</h1>} />
         <Route path="/contact" element={<h1>Contact Page</h1>} />
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
