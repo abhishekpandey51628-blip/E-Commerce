@@ -3,7 +3,6 @@ const UserModel = require("../Model/user.js")
 const router = express.Router();
 
 
-<<<<<<< HEAD
 router.post("/signup", async(req,res)=>{
     try{ 
       const {name,email, password} = req.body;
@@ -11,14 +10,9 @@ router.post("/signup", async(req,res)=>{
     if(existingUser) {
       console.log("111")
        return res.status(401).json({msg:"user email already exist"});
-=======
-router.post("/sign", async(req,res)=>{
-     const {name,email, password} = req.body;
-  
-    if( await UserModel.findOne({email}) ){
-        res.status(401).json({mesg:"user email already exist"});
->>>>>>> 248944b42d759733991706ed052165a9aa60b50e
+
     }
+    
     
      const userdata = new UserModel({name,email, password});
      await userdata.save();
@@ -44,10 +38,10 @@ router.post("/login", async(req,res)=>{
         return  res.status(401).json({msg:"User password not correct"});
         
          
-})
+});
 router.post("/logout",(req,res)=>{
     req.session.destroy((err)=>{console.log(err)})
     console.log("session destroyed");
     res.json({msg:"session destroyed"})
-})
+});
 module.exports= router
