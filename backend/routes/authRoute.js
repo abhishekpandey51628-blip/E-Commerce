@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/sign", async(req,res)=>{
      const {name,email, password} = req.body;
   
-    if(UserModel.findOne({email}) ){
+    if( await UserModel.findOne({email}) ){
         res.status(401).json({mesg:"user email already exist"});
     }
     
