@@ -3,7 +3,9 @@ const  mongoose = require("mongoose");
 const routerAuth = require("./routes/authRoute")
 const session = require("express-session")  
 const ProduceRoute = require("./routes/CommerceRoute/CommerceRoute.js")
-//
+
+const session = require("express-session")
+
 const app = express();
 const cors = require("cors");
 app.use(cors({
@@ -17,7 +19,7 @@ app.use(session({
     resave:false,
 }))
 app.use("/",routerAuth);
-app.use("/",ProduceRoute);
+
 function init(){
     mongoose.connect("mongodb://localhost:27017/Ecommerce")
         .then(() => {

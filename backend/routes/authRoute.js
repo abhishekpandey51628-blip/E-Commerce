@@ -44,10 +44,10 @@ router.post("/login", async(req,res)=>{
         return  res.status(401).json({msg:"User password not correct"});
         
          
-});
+})
 router.post("/logout",(req,res)=>{
     req.session.destroy((err)=>{console.log(err)})
     console.log("session destroyed");
     res.json({msg:"session destroyed"})
-});
+})
 module.exports= router
