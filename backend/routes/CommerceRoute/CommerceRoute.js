@@ -8,7 +8,7 @@ const authMiddle = require("../../middleware/authMiddle");
 router.get("/produce", authMiddle, async (req,res)=>{
      const produce = await ProduceModel.find().limit(20);
      console.log(produce);
-     res.end();
+     res.json(produce);
 });
 
 
