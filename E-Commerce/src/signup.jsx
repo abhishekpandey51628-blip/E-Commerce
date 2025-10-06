@@ -18,6 +18,7 @@ function Signup() {
       });
       const data = await res.json();
       setMessage(data.msg);
+      
     } catch (error) {
       console.log(error);
       setMessage("Error connecting to server");

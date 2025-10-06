@@ -6,14 +6,15 @@ const router = express.Router();
 router.post("/signup", async(req,res)=>{
     try{ 
       const {name,email, password} = req.body;
-     const existingUser=await UserModel.findOne({email});
+     const existingUser= await UserModel.findOne({email});
     if(existingUser) {
+      console.log("111")
        return res.status(401).json({msg:"user email already exist"});
     }
     
      const userdata = new UserModel({name,email, password});
      await userdata.save();
-     res.json({msg: "Signup successful!"});
+     res.render("login");
     }
      catch(err){
       console.error(err);
