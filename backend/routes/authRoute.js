@@ -16,7 +16,7 @@ router.post("/signup", async(req,res)=>{
     
      const userdata = new UserModel({name,email, password});
      await userdata.save();
-     res.render("login");
+     res.json({msg:"sign up"})
     }
      catch(err){
       console.error(err);
