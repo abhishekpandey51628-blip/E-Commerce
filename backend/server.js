@@ -3,7 +3,8 @@ const  mongoose = require("mongoose");
 const routerAuth = require("./routes/authRoute")
 const session = require("express-session")  
 const ProduceRoute = require("./routes/CommerceRoute/CommerceRoute.js")
-//
+
+
 const app = express();
 const cors = require("cors");
 app.use(cors({
@@ -17,7 +18,7 @@ app.use(session({
     resave:false,
 }))
 app.use("/",routerAuth);
-app.use("/",ProduceRoute);
+
 function init(){
     mongoose.connect("mongodb://localhost:27017/Ecommerce")
         .then(() => {
@@ -25,7 +26,7 @@ function init(){
         })
         .catch(err => {
             console.error('MongoDB connection error:', err);
-            process.exit(1); // Exit application on connection failure
+          
         });
 
         app.listen(5000,()=>{console.log("server started")});

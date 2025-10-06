@@ -3,22 +3,7 @@ const UserModel = require("../Model/user.js")
 const router = express.Router();
 
 
-
 router.post("/signup", async(req,res)=>{
-    try{ 
-      const {name,email, password} = req.body;
-     const existingUser= await UserModel.findOne({email});
-    if(existingUser) {
-      console.log("111")
-       return res.status(401).json({msg:"user email already exist"});
-    }
-  }
-  catch(e){
-     res.status(500).json({message:"Error Signing up"});
-  }
-});
-
-router.post("/sign", async(req,res)=>{
      const {name,email, password} = req.body;
   try{
     if( await UserModel.findOne({email}) ){
@@ -28,7 +13,8 @@ router.post("/sign", async(req,res)=>{
     
      const userdata = new UserModel({name,email, password});
      await userdata.save();
-     res.render("login");
+     res.json({msg:"Signing Successful"});
+     
     }
      catch(err){
       console.error(err);

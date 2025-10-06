@@ -19,11 +19,14 @@ function Signup() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log("Response:",data);
-      setMessage(data.msg);
-      if(data.success){
+      if(res.ok){
+        setMessage("Successfully Signup");
         navigate("/login");
-      }
+
+    }
+    else{
+      setMessage(data.msg);
+    }
       
     } catch (error) {
       console.log(error);
