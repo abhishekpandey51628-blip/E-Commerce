@@ -11,7 +11,7 @@ router.get("/product", authMiddle, async (req,res)=>{
      res.json(produce);
 });
 
-router.post("/product",/*authMiddle,*/async(req,res)=>{
+router.post("/product",authMiddle,async(req,res)=>{
      const {name, price, description} = req.body;
       const pruduct = await new  ProduceModel({name,price,description});
       await pruduct.save();
