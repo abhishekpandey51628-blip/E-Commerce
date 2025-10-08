@@ -18,9 +18,9 @@ app.use(session({
     resave:false,
 }))
 app.use("/",routerAuth);
-
+app.use("/",ProduceRoute);
 function init(){
-    mongoose.connect("mongodb://localhost:27017/Ecommerce")
+    mongoose.connect("mongodb+srv://aniket1:aniket1@myserver.7vzoi9g.mongodb.net/")
         .then(() => {
             console.log('MongoDB connected successfully!');
         })
