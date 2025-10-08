@@ -6,7 +6,7 @@ const authMiddle = require("../../middleware/authMiddle");
 
 
 router.get("/product", authMiddle, async (req,res)=>{
-     const produce = await ProduceModel.find().limit(20);
+     const produce = await ProduceModel.find().limit(20); 
      console.log(produce);
      res.json(produce);
 });
