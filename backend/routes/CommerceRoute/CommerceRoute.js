@@ -11,10 +11,13 @@ router.get("/product", authMiddle, async (req,res)=>{
      res.json(produce);
 });
 
+router.get("/product_specific",async(req,res)=>{
+      r
+});
 router.post("/product",authMiddle,async(req,res)=>{
      const {name, price, description} = req.body;
-      const pruduct = await new  ProduceModel({name,price,description});
-      await pruduct.save();
+      const product = await new  ProduceModel({name,price,description});
+      await product.save();
        res.send("done");
 })
 
