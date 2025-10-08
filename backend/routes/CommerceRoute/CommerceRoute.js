@@ -11,14 +11,22 @@ router.get("/product", authMiddle, async (req,res)=>{
      res.json(produce);
 });
 
-router.get("/product_specific",async(req,res)=>{
-      r
+router.get("/product_id",async(req,res)=>{
+       const {id} = req.id;
+       let product_ById = await ProduceModel.findOne({id});
+
+     res.json(product_ById);
+});
+router.get("/product_category", async (req,res)=>{
+       const {category } = req.body;
+       let product_list= await ProduceModel.find({category});
+         res.json(product_list);
 });
 router.post("/product",authMiddle,async(req,res)=>{
-     const {name, price, description} = req.body;
-      const product = await new  ProduceModel({name,price,description});
+     const {name, price, description,img ,category} = req.body;
+      const product = await new  ProduceModel({name,price,description,img,category});
       await product.save();
-       res.send("done");
+       res.json({msg:"done"});
 })
 
 

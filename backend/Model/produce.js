@@ -6,7 +6,7 @@ const pmodel = new Schema({
     price:{type:Number ,required:true },
     description:{},
     img:String,
-    
+    category:String  
 })
 
 const ProduceModel = model("ProduceModel",pmodel);
