@@ -11,7 +11,7 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Signup button clicked");
+    
     try {
       const res = await fetch("http://localhost:5000/signup", {
         method: "POST",
@@ -22,7 +22,7 @@ function Signup() {
       if(res.ok){
         setMessage("Successfully Signup");
         navigate("/login");
-
+        
     }
     else{
       setMessage(data.msg);

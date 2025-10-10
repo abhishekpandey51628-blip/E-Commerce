@@ -4,10 +4,12 @@ const router = express.Router();
 
 
 router.post("/signup", async(req,res)=>{
+  
+     console.log("Received signup request:", req.body);  
      const {name,email, password} = req.body;
   try{
     if( await UserModel.findOne({email}) ){
-        res.status(401).json({mesg:"user email already exist"});
+       return res.status(401).json({msg:"user email already exist"});
 
     }
     

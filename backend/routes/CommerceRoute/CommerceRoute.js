@@ -16,7 +16,7 @@ router.post("/product",authMiddle,async(req,res)=>{
       const pruduct = await new  ProduceModel({name,price,description});
       await pruduct.save();
        res.send("done");
-})
+});
 
 
 

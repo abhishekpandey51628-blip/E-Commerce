@@ -21,14 +21,12 @@ function NavBar() {
       <nav className="navbar">  
         <h2>E-Commerce</h2>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/Home">Home</Link></li>
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/about">About</Link></li>
 
-          {/* <li>
-            <button onClick={() => navigate("/signup")} className="nav-btn">Signup</button>
-          </li> */}
+         
           
           <li>
             <FontAwesomeIcon

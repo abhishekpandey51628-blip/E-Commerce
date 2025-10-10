@@ -19,9 +19,14 @@ function Login() {
       });
       const data = await res.json();
       setMessage(data.msg);
-      if(data.success){
-      navigate('/Home');
-      }
+      if(res.ok){
+        setMessage("Successfully Signup");
+        navigate("/Product");
+        
+    }
+    else{
+      setMessage(data.msg);
+    }
 
     } catch (error) {
       console.error(error);
