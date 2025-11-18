@@ -12,10 +12,7 @@ function NavBar() {
     navigate(path);
     setShowDialog(false);
 
-
-
   };
-
   return (
     <>
       <nav className="navbar">  

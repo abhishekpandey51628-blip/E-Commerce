@@ -4,7 +4,7 @@ const routerAuth = require("./routes/authRoute")
 const session = require("express-session")  
 const ProduceRoute = require("./routes/CommerceRoute/CommerceRoute.js")
 
-
+ 
 const app = express();
 const cors = require("cors");
 app.use(cors({

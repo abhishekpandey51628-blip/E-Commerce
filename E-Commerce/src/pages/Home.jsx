@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./home.css"
 function Home() {
   const [products, setProducts] = useState([]);
-
+ 
   useEffect(() => {
     fetch("http://localhost:5000/api/product",{
       credentials:"include",
